@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+    }
+    #number {
+      font-size: 30px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click the Button to Get a Random Number</h1>
+  <button onclick="generateRandomNumber()">Generate Random Number</button>
+  
+  <div id="number"></div>
+
+  <script>
+    function generateRandomNumber() {
+      // Generate a random number between 1 and 200
+      let randomNumber = Math.floor(Math.random() * 200) + 1;
+      
+      // Format the number with leading zeros if necessary
+      let formattedNumber = randomNumber.toString().padStart(3, '0');
+      
+      // Display the number
+      document.getElementById('number').innerText = formattedNumber;
+    }
+  </script>
+
+</body>
+</html>
